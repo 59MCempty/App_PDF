@@ -31,6 +31,10 @@ for index, row in df.iterrows():
     # value of x1: from left border to starting point
     # x2, y2: coordinates of the end point of line
     # value of x2: distance from starting point to the end point
-    pdf.line(20, 21, 200, 21)
+    pdf.line(12, 21, 200, 21)
+
+    # add more pages follow topic.csv
+    for i in range(row["Pages"] - 1):
+        pdf.add_page()
 
 pdf.output("output.pdf")
